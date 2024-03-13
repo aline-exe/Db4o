@@ -7,8 +7,7 @@ import javax.swing.JOptionPane;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        ObjectContainer db = Db4o.openFile("f:/aulu.txt");
-        Pokedex poke = new Pokedex(0, null, null, null);
+        ObjectContainer db = Db4o.openFile("aulu.txt");
         Scanner entrada = new Scanner(System.in);
 
         int opc = 0;
@@ -27,6 +26,7 @@ public class App {
 
                 // caso pra adicionar um registro no banco de dados
                 case 1:
+                    Pokedex poke = new Pokedex(0, null, null, null);
                     poke.setNome((JOptionPane.showInputDialog("Qual nome do seu novo Pokemon?")));
                     poke.setID((Integer.parseInt(JOptionPane.showInputDialog("Qual ID do Pokemon?"))));
                     poke.setTipo((JOptionPane.showInputDialog("Qual tipo do seu Pokemon?")));
